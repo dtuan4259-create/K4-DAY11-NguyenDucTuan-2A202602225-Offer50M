@@ -1,9 +1,9 @@
-camera_id,slice_type,frames,risk,rationale
-front,normal,,TODO,TODO
-front,hard,,TODO,TODO
-rear,normal,,TODO,TODO
-rear,hard,,TODO,TODO
-left,normal,,TODO,TODO
-left,hard,,TODO,TODO
-right,normal,,TODO,TODO
-right,hard,,TODO,TODO
+﻿camera_id,slice_type,frames,risk,rationale
+front,normal,30,Low,Baseline kiem tra chat luong gan nhan tren luong di chuyen chinh o dieu kien tieu chuan
+front,hard,40,High,Vung rui ro cao nhat ve an toan ADAS va ty le loi cao tap trung o zone center do che khuat va nguoc sang
+rear,normal,20,Low,Theo doi xe bam duoi va duy tri giam sat tong the phia sau o toc do on dinh
+rear,hard,25,Medium,Rui ro den pha chieu gay loa hoac xe ap sat bat ngo trong khoang cach ngan
+left,normal,20,Low,Kiem soat phuong tien song song o lan trai tren tuyen duong thang
+left,hard,22,High,Diem mu goc trai va xe chuyen lan cat mat o mat do cao de sot vat the
+right,normal,20,Low,Kiem soat phuong tien di chuyen ben phai o toc do thap hoac do xe
+right,hard,23,High,Diem mu goc phai va nguoi di bo/xe hai banh re dot ngot vao goc quay
