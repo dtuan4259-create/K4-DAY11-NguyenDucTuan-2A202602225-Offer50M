@@ -1,0 +1,9 @@
+round: calib
+slice: C0
+sha256: ac35a3f331abed670a81ab9b12325777aa645c3c8bfe457c49400effd5441f26
+code: AC35-A3F3
+locked_at: 2026-09-29T12:11:13+07:00
+shapes: box=5, polygon=2
+prefill_kept: 0
+prefill_edited: 0
+new: 5

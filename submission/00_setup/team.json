@@ -1,0 +1,7 @@
+{
+  "qa_reviews": {
+    "HoangVoMinhTuan": "NguyenDucTuan",
+    "NguyenDucTuan": "VoThanhDuc",
+    "VoThanhDuc": "HoangVoMinhTuan"
+  }
+}
