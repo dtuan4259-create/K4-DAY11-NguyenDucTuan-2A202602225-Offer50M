@@ -1,1 +1,5 @@
-id,date,question,decision,rationale,status
+﻿decision_id,issue_summary,root_cause,decision,owner,status
+DEC-01,Nhieu box thua SPURIOUS o center zone B2,Guideline cu chua ro quy tac loai bo bong ram,Ap dung guideline patch tight-fit va loai bo box shadow,Role B,resolved
+DEC-02,Bo sot xe bi che khuat o hậu cảnh xa (MISSING),Thieu nguong nhan dien ti le phuong tien nhin thay,Quy dinh ro nguong occlusion toi thieu 20% visibility,Role B,resolved
+DEC-03,Bất đồng thuận lớn giữa model predictions và reference box trên B2,Độ lệch ranh giới và nhầm class ở các ca khó vùng biên,Nâng cấp escalation ticket xin ý kiến thống nhất từ Lead,Role C,escalated
+DEC-04,Trùng lặp box tại đường seam giữa camera front và left,Chưa có quy ước xử lý đối tượng vắt ngang hai góc nhìn,Chi định camera có vùng hiển thị chính giữ box chính và liên kết nhãn,Role C,resolved

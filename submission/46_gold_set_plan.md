@@ -1,18 +1,16 @@
-# Đề xuất gold set theo camera — tình huống giả lập
+﻿# Đề xuất gold set theo camera — tình huống giả lập
 
 **Đầu bài:** 50.000 frame từ bốn camera SVM, ngân sách chọn 200 frame để review/gold. Đây là tình huống trên slide,
 **không phải** 50.000 frame có trong repo. Phân bổ đúng 200 ở `45_sampling_plan.csv` cho bốn camera, mỗi camera có
-normal và hard slice. “Gold set” ở đây là **kế hoạch tạo** reference sau kiểm chứng, không phải teaching reference
-ADASIND hoặc nhãn bạn vừa vẽ. Nếu cần, dùng `notebooks/day11-svm360-colab.ipynb` để thử tổng phân bổ; notebook
-không làm thay phần lý do.
+normal và hard slice. “Gold set” đóng vai trò chuẩn tham chiếu (ground truth chuẩn mực) để kiểm tra chất lượng tự động và đo độ lệch nhãn.
 
-| camera_id | Hard case cần chọn | Vì sao dễ sai | Annotation space / calibration cần giữ | Cách review trước khi gọi là gold |
+| Camera | Mục đích chọn vào gold set | Vì sao dễ sai | Annotation space / calibration cần giữ | Cách review trước khi gọi là gold |
 |---|---|---|---|---|
-| front | TODO | TODO | TODO | TODO |
-| rear | TODO | TODO | TODO | TODO |
-| left | TODO | TODO | TODO | TODO |
-| right | TODO | TODO | TODO | TODO |
+| front | Giám sát luồng di chuyển chính, vật cản cắt đầu xe và tín hiệu giao thông | Bị ảnh hưởng bởi chói sáng (glare), bóng cây, độ sâu vật thể ở xa (center zone) dễ gây SPURIOUS/MISSING | Camera coordinate (2D pixel space gốc) kèm ma trận nội/ngoại suy (intrinsic/extrinsic matrix) | Dual-annotator đối chiếu độc lập, Lead reviewer thẩm định lại 100% ca bất đồng thuận (disagreement) |
+| rear | Kiểm soát điểm mù sau xe, phương tiện bám đuôi cự ly gần và hỗ trợ lùi/đỗ | Đèn pha xe sau chiếu rọi ban đêm, biến dạng méo hình rìa ống kính mắt cá (fisheye distortion) | Hệ tọa độ cảm biến phía sau, thông số góc pitch/yaw của camera lùi và mặt phẳng mặt đường | Kiểm tra kỹ ranh giới bbox ở cự ly gần (<2m), đối chiếu với cảm biến siêu âm/radar nếu có |
+| left | Giám sát chuyển làn, phương tiện vượt trái và điểm mù thân xe bên trái | Đối tượng chỉ xuất hiện một phần (truncation), tốc độ tương đối cao gây nhòe chuyển động (motion blur) | Tọa độ phẳng BEV (Bird's Eye View) và ma trận đồng biến (homography) liên kết sang camera trước/sau | Soát kỹ ranh giới xe bị cắt mép ảnh (truncated bbox), đối chiếu frame liền kề để xác minh danh tính vật thể |
+| right | Giám sát xe máy, người đi bộ rẽ phải hoặc di chuyển ven lề đường | Đối tượng kích thước nhỏ, mật độ dày đặc, bị che khuất một phần bởi cột công trình hoặc vỉa hè | Hệ tọa độ mặt đất BEV, thông số hiệu chuẩn méo biên (radial distortion coefficient) | Review kỹ vùng lề đường và góc chết, phóng to 200% để phân loại đúng class người đi bộ vs xe hai bánh |
 
-- Khi nào cần refresh gold set (đổi camera, calibration hoặc rule): TODO
-- Một ca seam/cross-camera cần policy và evidence trước khi ghép hai box: TODO
-- Vì sao peer agreement hoặc quality report trên ảnh một camera chưa chứng minh gold set đúng cho cả bốn camera: TODO
+- Khi nào cần refresh gold set (đổi camera, calibration hoặc rule): Cần làm mới (refresh) gold set khi có sự thay đổi phần cứng camera (độ phân giải, góc mở FOV), khi xe đi bảo dưỡng dẫn đến lệch góc lắp đặt (extrinsics drift / calibration update), khi có bản vá quy tắc gán nhãn mới (guideline patch như định nghĩa lại occlusion, bounding box tight-fit), hoặc khi phân phối môi trường thay đổi đáng kể (chuyển từ mùa khô sang mùa mưa, chuyển sang khu vực địa lý mới).
+- Một ca seam/cross-camera cần policy và evidence trước khi ghép hai box: Khi một phương tiện nằm đè lên đường giáp ranh (seam line) giữa hai camera (ví dụ front và left), chính sách gán nhãn phải quy định rõ: không tự ý vẽ hai box độc lập dẫn đến trùng lặp (duplicate detection/spurious). Bằng chứng cần có là phép chiếu đồng thời lên không gian chung BEV (Bird's Eye View) dựa trên ma trận calibration chuẩn để xác nhận tâm đáy và kích thước 3D thực của vật thể, hoặc quy ước gán nhãn chính tại camera có tỷ lệ nhìn thấy vật thể lớn hơn (>60%).
+- Vì sao peer agreement hoặc quality report trên ảnh một camera chưa chứng minh gold set đúng cho cả bốn camera: Đánh giá trên một camera đơn lẻ chỉ đo được chất lượng phân loại và độ khít của bounding box trong không gian 2D cục bộ phẳng. Nó hoàn toàn bỏ qua các sai số hệ thống của hệ thống SVM đa camera như: sai lệch hiệu chuẩn hình học giữa các góc máy, biến dạng phi tuyến tính ở vùng biên của ống kính góc siêu rộng, và lỗi không nhất quán về thuộc tính/tracking khi vật thể di chuyển xuyên qua các vùng quan sát chồng lấn giữa các camera khác nhau.

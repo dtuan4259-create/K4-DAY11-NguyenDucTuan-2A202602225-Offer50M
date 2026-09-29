@@ -1,9 +1,44 @@
-round,slice,frame,object_ref,cell,what,why,severity,owner,rule_id,evidence,action,rules_version,note
-calib,C0,adasind_019560.jpg,L1,na,SPURIOUS,,,,,,,,
-calib,C0,adasind_019560.jpg,L4,na,SPURIOUS,,,,,,,,
-calib,C0,adasind_019560.jpg,R4,na,MISSING,,,,,,,,
-calib,C0,adasind_019560.jpg,R5,na,MISSING,,,,,,,,
-calib,C0,adasind_019560.jpg,R6,na,MISSING,,,,,,,,
-r2_qa,B2-center,adasind_062370.jpg,L2,L_only,WRONG_CLASS,,,,R04,"assets/images/adasind_062370.jpg: xe van bạc có cửa kính hành khách; data/_qa/B2-center.xml L2 gán Truck, R04 quy định van chở người là Car",,v1.0.0,
-r2_qa,B2-center,adasind_062370.jpg,L3,L_only,ATTRIBUTE,,,,R05,"assets/images/adasind_062370.jpg: xe ba bánh bên trái bị cắt bởi biên ảnh; data/_qa/B2-center.xml L3 x trái=3 và truncated=false, cần soát truncated",,v1.0.0,
-r2_qa,B2-center,adasind_086220.jpg,L4,L_only,ATTRIBUTE,,,,R05,assets/images/adasind_086220.jpg: xe ba bánh bên phải bị cắt bởi biên; data/_qa/B2-center.xml L4 x phải=1080 (bằng chiều rộng ảnh) nhưng truncated=false,,v1.0.0,
+﻿"round","slice","frame","object_ref","cell","what","why","severity","owner","rule_id","evidence","action","rules_version","note"
+"calib","C0","adasind_019560.jpg","L1","na","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"calib","C0","adasind_019560.jpg","L4","na","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"calib","C0","adasind_019560.jpg","R4","na","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"calib","C0","adasind_019560.jpg","R5","na","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"calib","C0","adasind_019560.jpg","R6","na","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r2_qa","B2-center","adasind_062370.jpg","L2","L_only","WRONG_CLASS","","","","R04","assets/images/adasind_062370.jpg: xe van bạc có cửa kính hành khách; data/_qa/B2-center.xml L2 gán Truck, R04 quy định van chở người là Car","","v1.0.0",""
+"r2_qa","B2-center","adasind_062370.jpg","L3","L_only","ATTRIBUTE","","","","R05","assets/images/adasind_062370.jpg: xe ba bánh bên trái bị cắt bởi biên ảnh; data/_qa/B2-center.xml L3 x trái=3 và truncated=false, cần soát truncated","","v1.0.0",""
+"r2_qa","B2-center","adasind_086220.jpg","L4","L_only","ATTRIBUTE","","","","R05","assets/images/adasind_086220.jpg: xe ba bánh bên phải bị cắt bởi biên; data/_qa/B2-center.xml L4 x phải=1080 (bằng chiều rộng ảnh) nhưng truncated=false","","v1.0.0","r1_craft"
+"r1_craft","B2-center","adasind_062370.jpg","R7","na","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r1_craft","B2-center","adasind_062370.jpg","R8","na","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r1_craft","B2-center","adasind_086220.jpg","L4+R1","na","ATTRIBUTE","E1_annotator_error","P2","annotator","","","rework","",""
+"r1_craft","B2-center","adasind_117120.jpg","L4","na","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r1_craft","B2-center","adasind_117120.jpg","R3","na","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","L3+R1","LR_noM","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","L6+R6","LR_noM","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","L1+R5","LR_noM","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","L2","L_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","R4+M6","RM_noL","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","R7","R_only","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","R8","R_only","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","M3","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","M4","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","M5","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","M8","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_062370.jpg","M10","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_086220.jpg","L4+R1","LR_noM","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_086220.jpg","L3+R5","LR_noM","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_086220.jpg","L5+R4","LR_noM","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_086220.jpg","M2","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_086220.jpg","M3","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_086220.jpg","M5","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_086220.jpg","M6","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_086220.jpg","M7","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_086220.jpg","M8","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_117120.jpg","L6+R2","LR_noM","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_117120.jpg","L5+R4","LR_noM","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_117120.jpg","L4","L_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_117120.jpg","R3+M5","RM_noL","MISSING","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_117120.jpg","M1","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_117120.jpg","M6","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_117120.jpg","M7","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_117120.jpg","M8","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
+"r3_diag","B2-center","adasind_117120.jpg","M10","M_only","SPURIOUS","E1_annotator_error","P2","annotator","","","rework","",""
