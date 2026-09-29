@@ -4,13 +4,13 @@
 
 - Khóa/lớp: 4
 - Tên nhóm: Offer50M
-- Repo Public: https://github.com/vothanhduc/K4-DAY11-Offer50M
+- Repo Public: https://github.com/vothanhducdev/K4-DAY11-Offer50M
 - Máy giữ hồ sơ chính / người quản lý: Võ Thành Đức
 - Slice chung lấy từ mode.json: B4-edge
 - Tên định danh vai A dùng cho --self: minhtuan
 - Kênh trao đổi nội bộ: Zalo
 - Đại diện nộp (vai C): Võ Thành Đức - 2A202602167
-- Commit chốt bài: [SHA hoặc URL commit]
+- Commit chốt bài: 93b4412
 
 ## 2. Ba vai chính
 
